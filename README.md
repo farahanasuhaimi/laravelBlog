@@ -6,7 +6,7 @@
 
 👋 I'm an aspiring web developer, and when I started my journey, I found many tutorials and guides overwhelming, assuming I had prior experience with web application frameworks. That's when I discovered this course, which is perfect for someone like me, with no prior knowledge of web frameworks.
 
-(The Course)[https://www.udemy.com/course/lets-learn-laravel-a-guided-path-for-beginners/]
+[The Course](https://www.udemy.com/course/lets-learn-laravel-a-guided-path-for-beginners/)
 
 ## **What I Mastered:**
 
