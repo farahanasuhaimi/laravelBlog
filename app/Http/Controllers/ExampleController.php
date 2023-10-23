@@ -11,9 +11,6 @@ class ExampleController extends Controller
     }
 
     public function aboutPage() {
-        $shopName = 'Kedai Nurza';
-        $shopWhere = 'Rantau Panjang';
-        $product = ['Girl`s Clothes', 'Boy`s Clothes'];
-        return view('aboutus', ['name'=>$shopName, 'place'=>$shopWhere, 'products'=>$product]);
+        return view('single-post');
     }
 }
