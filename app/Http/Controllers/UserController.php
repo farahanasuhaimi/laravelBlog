@@ -30,9 +30,15 @@ class UserController extends Controller
         ]);
 
         if (auth()->attempt(['username' => $incomingFields['loginusername'], 'password' => $incomingFields['loginpassword']])) {
-            return 'congrats!';
+            return redirect('/')->with('success', 'You are logged in');
         } else {
-            return 'failed';
+            return redirect('/')->with('error', 'Invalid login credentials');
         };
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect('/')->with('success', 'You are logged out');
     }
 }
