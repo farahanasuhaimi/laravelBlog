@@ -1,6 +1,14 @@
 <x-layout>
     <div class="container py-md-5">
         <div class="row align-items-center">
+          @if (Auth::check())
+          <div class="container py-md-5 container--narrow">
+            <div class="text-center">
+              <h2>Hello <strong>{{auth()->user()->username}}</strong>, your feed is empty.</h2>
+              <p class="lead text-muted">Your feed displays the latest posts from the people you follow. If you don&rsquo;t have any friends to follow that&rsquo;s okay; you can use the &ldquo;Search&rdquo; feature in the top menu bar to find content written by people with similar interests and then follow them.</p>
+            </div>
+          </div>
+          @else
           <div class="col-lg-7 py-3 py-md-5">
             <h1 class="display-3">Remember Writing?</h1>
             <p class="lead text-muted">Are you sick of short tweets and impersonal &ldquo;shared&rdquo; posts that are reminiscent of the late 90&rsquo;s email forwards? We believe getting back to actually writing is the key to enjoying the internet again.</p>
@@ -43,6 +51,8 @@
               <button type="submit" class="py-3 mt-4 btn btn-lg btn-success btn-block">Sign up for OurApp</button>
             </form>
           </div>
+          @endif
+          
         </div>
       </div>
 </x-layout>
