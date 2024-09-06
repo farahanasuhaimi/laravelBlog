@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class BlogpostController extends Controller
 {
-    public function showSingleBlogpost($id)
+    public function showSingleBlogpost(Blogpost $post)
     {
-
-        return view('single-post');
+        return view('single-post', ['post' => $post]);
     }
 
     public function createBlogpost(Request $request)
