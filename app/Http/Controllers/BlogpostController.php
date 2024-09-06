@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogpost;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class BlogpostController extends Controller
 {
     public function showSingleBlogpost(Blogpost $post)
     {
+        $ourHTML = Str::markdown($post->body);
+        $post['body'] = $ourHTML;
         return view('single-post', ['post' => $post]);
     }
 
@@ -23,8 +26,8 @@ class BlogpostController extends Controller
         $incomingFields['body'] = strip_tags($incomingFields['body']);
         $incomingFields['user_id'] = auth()->id();
 
-        Blogpost::create($incomingFields);
-        return redirect('/')->with('success', 'Blog post created successfully!');
+        $newPost = Blogpost::create($incomingFields);
+        return redirect("/blogpost/{$newPost->id}")->with('success', 'Blog post created successfully!');
     }
 
     public function showCreateBlogpostForm()

@@ -17,7 +17,7 @@
     </p>
 
     <div class="body-content">
-      <h2>{{ $post->body}}</h2>
+      {!! $post->body !!}
     </div>
   </div>
 </x-layout>

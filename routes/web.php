@@ -15,12 +15,12 @@ use App\Http\Controllers\BlogpostController;
 |
 */
 // User related routes  
-Route::get('/', [UserController::class, "homepage"]);
-Route::post('/register', [UserController::class, "register"]);
-Route::post('/login', [UserController::class, "login"]);
-Route::post('/logout', [UserController::class, "logout"]);
+Route::get('/', [UserController::class, "homepage"])->name('login');
+Route::post('/register', [UserController::class, "register"])->middleware('guest');
+Route::post('/login', [UserController::class, "login"])->middleware('guest');
+Route::post('/logout', [UserController::class, "logout"])->middleware('auth');
 
 // Blog post related routes
-Route::get('/create-post', [BlogpostController::class, "showCreateBlogpostForm"]);
-Route::post('/create-post', [BlogpostController::class, "createBlogpost"]);
+Route::get('/create-post', [BlogpostController::class, "showCreateBlogpostForm"])->middleware('auth');
+Route::post('/create-post', [BlogpostController::class, "createBlogpost"])->middleware('auth');
 Route::get('/blogpost/{post}', [BlogpostController::class, "showSingleBlogpost"]);
