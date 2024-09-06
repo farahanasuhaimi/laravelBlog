@@ -2,6 +2,7 @@
   <div class="container py-md-5 container--narrow">
     <div class="d-flex justify-content-between">
       <h2>Example Post Title Here</h2>
+      @csrf
       <span class="pt-2">
         <a href="#" class="text-primary mr-2" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
         <form class="delete-post-form d-inline" action="#" method="POST">

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BlogpostController extends Controller
 {
+    public function showSingleBlogpost($id)
+    {
+
+        return view('single-post');
+    }
+
     public function createBlogpost(Request $request)
     {
         $incomingFields = $request->validate([
