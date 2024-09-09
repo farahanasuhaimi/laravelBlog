@@ -18,9 +18,9 @@ use App\Http\Controllers\BlogpostController;
 Route::get('/', [UserController::class, "homepage"])->name('login');
 Route::post('/register', [UserController::class, "register"])->middleware('guest');
 Route::post('/login', [UserController::class, "login"])->middleware('guest');
-Route::post('/logout', [UserController::class, "logout"])->middleware('auth');
+Route::post('/logout', [UserController::class, "logout"])->middleware('mustBeLoggedIn');
 
 // Blog post related routes
-Route::get('/create-post', [BlogpostController::class, "showCreateBlogpostForm"])->middleware('auth');
-Route::post('/create-post', [BlogpostController::class, "createBlogpost"])->middleware('auth');
+Route::get('/create-post', [BlogpostController::class, "showCreateBlogpostForm"])->middleware('mustBeLoggedIn');
+Route::post('/create-post', [BlogpostController::class, "createBlogpost"])->middleware('mustBeLoggedIn');
 Route::get('/blogpost/{post}', [BlogpostController::class, "showSingleBlogpost"]);

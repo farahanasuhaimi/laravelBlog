@@ -17,6 +17,7 @@ class MustBeLoggedIn
     {
         if (auth()->check()) {
             return $next($request);
-        } else redirect('/')->with('error', 'Only Logged in users can do that!');
+        }
+        return redirect('/')->with('error', 'Only Logged in users can do that!');
     }
 }

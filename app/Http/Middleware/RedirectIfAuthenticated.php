@@ -21,7 +21,7 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect('/')->with('error', 'Only Guest can do that!');
+                return redirect(RouteServiceProvider::HOME)->with('error', 'Only User  can do that!');
             }
         }
 
