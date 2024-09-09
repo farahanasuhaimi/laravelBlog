@@ -13,6 +13,12 @@ class UserController extends Controller
         return view('homepage');
     }
 
+    public function profile(User $user)
+    {
+
+        return view('profile-blogposts');
+    }
+
     public function register(Request $request)
     {
         $incomingFields = $request->validate([

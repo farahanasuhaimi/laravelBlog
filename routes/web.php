@@ -24,3 +24,6 @@ Route::post('/logout', [UserController::class, "logout"])->middleware('mustBeLog
 Route::get('/create-post', [BlogpostController::class, "showCreateBlogpostForm"])->middleware('mustBeLoggedIn');
 Route::post('/create-post', [BlogpostController::class, "createBlogpost"])->middleware('mustBeLoggedIn');
 Route::get('/blogpost/{post}', [BlogpostController::class, "showSingleBlogpost"]);
+
+// Profile related routes
+Route::get('/profile/{pizza}', [UserController::class, "profile"]);
