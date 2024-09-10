@@ -26,4 +26,4 @@ Route::post('/create-post', [BlogpostController::class, "createBlogpost"])->midd
 Route::get('/blogpost/{post}', [BlogpostController::class, "showSingleBlogpost"]);
 
 // Profile related routes
-Route::get('/profile/{pizza}', [UserController::class, "profile"]);
+Route::get('/profile/{user:username}', [UserController::class, "profile"]);

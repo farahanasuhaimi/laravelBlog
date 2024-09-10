@@ -16,7 +16,7 @@ class UserController extends Controller
     public function profile(User $user)
     {
 
-        return view('profile-blogposts');
+        return view('profile-blogposts', ['username' => $user->username, 'blogposts' => $user->blogposts()->latest()->get(), 'postCount' => $user->blogposts()->count()]);
     }
 
     public function register(Request $request)
