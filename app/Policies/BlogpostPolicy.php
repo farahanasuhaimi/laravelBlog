@@ -6,7 +6,7 @@ use App\Models\Blogpost;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class PostPolicy
+class BlogpostPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -37,7 +37,6 @@ class PostPolicy
      */
     public function update(User $user, Blogpost $blogpost): bool
     {
-        //
         return $user->id === $blogpost->user_id;
     }
 
@@ -46,7 +45,6 @@ class PostPolicy
      */
     public function delete(User $user, Blogpost $blogpost): bool
     {
-        //
         return $user->id === $blogpost->user_id;
     }
 
